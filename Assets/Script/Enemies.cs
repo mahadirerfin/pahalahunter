@@ -26,6 +26,7 @@ public class Enemies : MonoBehaviour
         {
             KomponenPlayer.Heart--;//Mengurangi nilai Heart -1 dst
             KomponenPlayer.play_again=true; //player kembali start dari awal
+            AudioManager.instance.Play("Hit");
         }
         // else if (other.transform.tag == "CheckPoint")
         // {

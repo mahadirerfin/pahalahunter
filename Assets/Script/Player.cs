@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
         info_Heart = GameObject.Find("UI_Heart").GetComponent<Text>(); // Pendefinisian UI Heart sebagai componen Text
         info_Poin = GameObject.Find("UI_Poin").GetComponent<Text>(); // Pendefinisian UI Coin sebagai componen Text
         // info_Amo = GameObject.Find("UI_Amo").GetComponent<Text>(); // Pendefinisian UI Amo sebagai Componen Text
+        AudioManager.instance.Play("BGM");
     }
 
     // Update is called once per frame
@@ -96,12 +97,14 @@ public class Player : MonoBehaviour
             transform.Translate(Vector2.right * kecepatan * Time.deltaTime); 
             pindah=1;
             anim.SetBool("Lari", true); //animasi lari
+            
         }
         else if (Input.GetKey (KeyCode.A)) //key A untuk bergerak ke kiri
         {
             transform.Translate(Vector2.right * -kecepatan * Time.deltaTime);
             pindah=-1;
             anim.SetBool("Lari", true); //aimasi lari
+
         }
         else if(tanah==true && Input.GetKey(KeyCode.Mouse1)) //Mouse0 = klik kiri Mouse1=Klik Kanan
         {

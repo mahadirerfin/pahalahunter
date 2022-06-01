@@ -28,7 +28,8 @@ public class Poin : MonoBehaviour
         {
             KomponenPlayer.Poin++;
             Destroy(gameObject);
-            Text.SetActive(true); 
+            Text.SetActive(true);
+            AudioManager.instance.Play("Poin"); 
         }
     }
 }
